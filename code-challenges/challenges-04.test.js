@@ -23,11 +23,14 @@ CHALLENGE 2
 Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
 
 ------------------------------------------------------------------------------------------------ */
+
 const containsW = (str) => {
 
-    let regex=/w/g
-  return regex.test(str);
+  let regex=/w/g
+return regex.test(str);
 };
+/* ---
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -40,12 +43,12 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
+
 const isNum = (input) => {
   // Solution code here...
   let reg=/([0-9])/
   return(reg.test(input)? true:false);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -78,24 +81,22 @@ const isCapitalized = (str) => {
   }
   return str.match(reg);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-// Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
+Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  let str=arr.toString();
-
   // Solution code here...
-  +
-  let reg=/([A-J]\w+)/g
-  if (!str.match(reg)){
-    return str.match();
-  }
-  return str.match(reg);
-
+  let regexName = /^[A-J]\w*/g;
+  let backCititesArray = [];
+  arr.forEach((city) => {
+    if (city.match(regexName)) {
+      backCititesArray.push(city);
+    }
+  });
+  return backCititesArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
