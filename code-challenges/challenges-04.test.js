@@ -89,7 +89,7 @@ const citiesAtoJ = (arr) => {
   let str=arr.toString();
 
   // Solution code here...
-  +
+  
   let reg=/([A-J]\w+)/g
   if (!str.match(reg)){
     return str.match();
