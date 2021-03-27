@@ -9,26 +9,27 @@ Write a function called sortStarWarsCharacters that sorts the characters in the 
 let starWarsPeople = [
   {
     "name": "C-3PO",
-    "height": "167",
+    "height": 167,
     "eye_color": "yellow"
   },
   {
     "name": "Luke Skywalker",
-    "height": "172",
+    "height": 172,
     "eye_color": "blue"
   },
   {
     "name": "R2-D2",
-    "height": "96",
+    "height": 96,
     "eye_color": "red"
   }
 ];
 
-const sortStarWarsCharacters = (starWarsArr) => {
-  starWarsArr.sort(()=>{
-    starWarsArr
 
-  })
+const sortStarWarsCharacters = (starWarsArr) => {
+  let x;
+for(let i=0;i<starWarsArr.length;i++){
+   return x=starWarsArr.sort((a, b) => (a.height < b.height) ? 1 : -1);
+}  
   // Solution code here...
 }
 
@@ -136,11 +137,21 @@ const gruffaloCrumble = {
 };
 
 
+
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  return result;
-};
+  let x = recipe.ingredients;
+
+  x.forEach((item) => {
+    result.push(item.slice(item.indexOf(' ', item.indexOf(' ') + 1) + 1));
+
+  });
+
+  return result;}
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -262,7 +273,7 @@ Run your tests from the console: jest challenges-05.test.js
 describe('Testing challenge 1', () => {
   test('It should sort the star wars characters by height from tallest to shortest', () => {
     expect(sortStarWarsCharacters(starWarsPeople)[0]['name']).toStrictEqual('Luke Skywalker');
-    expect(sortStarWarsCharacters(starWarsPeople)[2]['height']).toStrictEqual('96');
+    expect(sortStarWarsCharacters(starWarsPeople)[2]['height']).toStrictEqual(96);
   })
 });
 
