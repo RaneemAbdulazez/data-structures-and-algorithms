@@ -19,9 +19,12 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  // Solution code here...
-}
-
+  let newArray=[];
+  for (const [key, value] of Object.entries(obj)) {
+    newArray.push(`<li>${key}: ${value}</li>`);
+  }  
+  return newArray
+    }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -29,10 +32,13 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr) => {
-  // Solution code here...
-};
+const addValues = (array) => {
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  
+  let x= array.reduce(reducer,0);
+    return x
 
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -45,10 +51,22 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => {
-  // Solution code here...
-};
 
+const addPurchases = (arr) => {
+  let price=[]
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  
+  
+    for(let i=0;i<arr.length;i++){
+  price.push(arr[i].purchasePrice);
+  
+  }
+    
+    let x= price.reduce(reducer,0);
+      return x
+  
+  }
+  
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -58,6 +76,11 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
+  const reducer = (accumulator, currentValue) => accumulator + 1;
+
+  let x= arr.reduce(reducer,0);
+  return x
+
   // Solution code here...
 };
 
@@ -118,9 +141,20 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
-};
-
+  let array=[];
+  let y;
+  
+  let x=starWarsData.reduce((a,b)=>{
+  
+  y=b.name
+  array.push(y)
+  },0
+  )
+  
+  return array
+  
+  
+  }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -130,9 +164,13 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
-};
+  let arrOfChar = str.split('');
+  return arrOfChar.reduce((accumulator, val) => {
 
+    return val + accumulator;
+  }, '');
+
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
