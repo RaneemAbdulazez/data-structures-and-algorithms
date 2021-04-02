@@ -23,7 +23,27 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
+
   // Solution code here...
+  let array=[];
+  let y;
+  
+  let x=arr.reduce((a,b)=>{
+    
+    y=b.name
+    let arrOfChar = y.split('');
+     arrOfChar.reduce((accumulator, val) => {
+  
+      let final= val + accumulator;
+      array.push(final)
+    }, '');
+  },0
+  )
+  
+  
+  
+  return array
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +57,20 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  let sum =0;
+  input.filter(arr =>{
+
+    return arr.includes(target);
+  }).map( ele =>{
+
+    ele.forEach( val =>{
+
+      if(val ===target)
+        sum++;
+    });
+  });
+
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +84,22 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+
+  let sum =0;
+  input.filter(arr =>{
+
+    return arr.length !==0;
+  }).map( ele =>{
+
+    ele.forEach( val =>{
+
+      sum+=val;
+    });
+  });
+
+  return sum;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,9 +115,11 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map((arraysOfNumbers) =>
+    arraysOfNumbers.filter((val) =>
+      (typeof val === 'number' && val % 5 === 0)).map(valInsid =>
+      Math.pow(2, valInsid)));
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
 
