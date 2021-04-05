@@ -75,6 +75,8 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
+  const infoObj = Object.keys(obj);
+  return infoObj;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,6 +89,8 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
+  const objValue = Object.values(obj);
+  return objValue.includes(value) ? true : false
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,10 +112,15 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  // Solution code here...
-};
 
+const updateNumbers = (obj) => {
+  const objects = Object.entries(obj);
+  const arr = [];
+  objects.forEach(a=>{
+    arr.push(a[0] + ': ' + a[1]);
+  })
+  return arr;
+};
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -122,10 +131,12 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  const valuesForArr =sortByChildren(arr);
+  valuesForArr.forEach(a=>{
+    houses.push(a.house)
+  })
   return houses;
 };
-
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -139,10 +150,17 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    if (character === arr[i].name) {
+      if (arr[i].children.length === 0) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
 
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
