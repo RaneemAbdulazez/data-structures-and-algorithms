@@ -1,6 +1,6 @@
-from array_reverse import __version__
+from challenges.array_reverse import __version__
 
-from array_reverse.array_reverse import reverse
+from challenges.array_reverse.array_reverse import reverse
 
 def test_version():
     assert __version__ == '0.1.0'
