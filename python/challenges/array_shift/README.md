@@ -12,3 +12,5 @@ space O(n)
 
 ## Solution
 <!-- Embedded whiteboard image -->
+
+![whiteBoard](codechallenge2WhiteBoard.png)
