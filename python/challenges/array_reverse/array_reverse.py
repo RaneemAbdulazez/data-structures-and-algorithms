@@ -4,11 +4,10 @@ def reverse(my_list):
     if type (my_list)!=list or len(my_list)==0:
             return 'not valid input'
 
-    reverse = []
-    for item in my_list:
-        reverse.insert(0, item)
-    return reverse
 
+    reversed_list=my_list[::-1]
+
+    return reversed_list
 
 
 
