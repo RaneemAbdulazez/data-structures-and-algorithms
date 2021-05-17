@@ -74,7 +74,10 @@ class LinkedList:
             count += 1
 
         if k > count:
-            raise Exception('K can not be greater than the lengh of the list')
+            return 'Sorry, the value is larger than the linked list'
+        if k > count:
+            raise Exception('Sorry, the value is larger than the linked list')
+
 
         current = self.head
 
