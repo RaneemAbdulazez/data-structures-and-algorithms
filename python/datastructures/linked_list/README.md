@@ -23,6 +23,8 @@ Make a linked list which we can add and search in .
 
 
 
+
+
 # White Board
 
-![white](whiteBoard.png)
+![white](wh1.png)

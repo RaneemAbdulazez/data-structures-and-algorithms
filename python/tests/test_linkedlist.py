@@ -46,3 +46,18 @@ def test__str__():
     test_LinkedList.insert('0')
     test_LinkedList.insert('2')
     assert test_LinkedList.__str__() == "{ 2 } -> { 0 } -> { 2 } -> { 0 } -> { _ } -> { C } -> { O } -> { V } -> { I } -> { D } -> { - } -> { 1 } -> { 9 } -> NULL"
+
+
+def test_kthFromEnd(list_test):
+    list_test.append(88)
+    # print(list_test)
+    actual = list_test.kthFromEnd(1)
+    excpected = '2'
+    assert excpected == actual
+
+def test_kthFromEnd2(list_test):
+    # print(list_test)
+    actual = list_test.kthFromEnd(88)
+    print(actual)
+    excpected = 'Sorry, the value is larger than the linked list'
+    assert excpected == actual

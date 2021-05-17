@@ -65,4 +65,22 @@ class LinkedList:
 
 
 
+    def kth_from_the_end(self, k):
+        current = self.head
+        count = 0
+
+        while current.next:
+            current = current.next
+            count += 1
+
+        if k > count:
+            raise Exception('K can not be greater than the lengh of the list')
+
+        current = self.head
+
+        for _ in range(count - k):
+            current = current.next
+        print(current.value)
+        return current.value
+
     
