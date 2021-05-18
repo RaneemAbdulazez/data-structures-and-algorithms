@@ -45,24 +45,34 @@ class LinkedList:
         return linkedList_Serise
 
 
-    def append(self, item):
-        """Append item to the end of the list"""
-        current = self.head
-        previous = None
-        pos = 0
-        length = self.size()
-        while pos < length:
-            previous = current
-            current = current.getNext()
-            pos += 1
-            new_node = Node(item)
-            if previous is None:
-                new_node.setNext(current)
+    # def append(self, item):
+    #     """Append item to the end of the list"""
+    #     current = self.head
+    #     previous = None
+    #     pos = 0
+    #     length = self.size()
+    #     while pos < length:
+    #         previous = current
+    #         current = current.getNext()
+    #         pos += 1
+    #         new_node = Node(item)
+    #         if previous is None:
+    #             new_node.setNext(current)
+    #             self.head = new_node
+    #         else:
+    #             previous.setNext(new_node)
+
+
+    def append(self, value):
+            new_node = Node(value)
+            current = self.head
+            if not self.head:
                 self.head = new_node
             else:
-                previous.setNext(new_node)
-
-
+                current = self.head
+                while current.next:
+                    current = current.next
+                current.next = new_node
 
 
     def kth_from_the_end(self, k):
