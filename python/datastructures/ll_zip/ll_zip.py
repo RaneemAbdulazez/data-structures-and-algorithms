@@ -4,6 +4,7 @@ def zipLists(first, second):
      first = first
      second = second
      current1 = first.head
+     
      current2 = second.head
      length1 =0
      length2 =0
@@ -32,19 +33,19 @@ def zipLists(first, second):
             linked_first = first_next
             linked_second = second_next
             second.head = linked_second
-     return first
+     return f'{first}'
 
 
      
 
-linked1 = LinkedList()
-linked1.append(1)
-linked1.append(3)
-linked1.append(2)
+# linked1 = LinkedList()
+# linked1.append(1)
+# linked1.append(3)
+# linked1.append(2)
 
-linked2 = LinkedList()
-linked2.append("5")
-linked2.append("9")
-linked2.append(4)
+# linked2 = LinkedList()
+# linked2.append("5")
+# linked2.append("9")
+# linked2.append(4)
 
-zipLists(linked1,linked2)
+# zipLists(linked1,linked2)
