@@ -1,7 +1,7 @@
 # Challenge Summary
 this challenge is about combine two linke lists in zip way 
 ## Whiteboard Process
-![white](zip.png)
+![white](white_Board.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
