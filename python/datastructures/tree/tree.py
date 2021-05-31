@@ -1,5 +1,4 @@
-from typing import Counter
-
+from challenges.stacks_and_queues.stacks_and_queues import Queue
 
 class Node :
     def __init__(self,val):
@@ -59,22 +58,28 @@ class Tnode:
         
         
 class Binary_tree:
-    def __init__(self,root):
+
+    def __init__(self,root=None):
         self.root=root      
-        
-        
-        
-        
+        self.pre_order_list=[] 
+        self.in_order_list=[]
+        self.post_order_list=[]
     def pre_order(self):
-        
+       
         
         def walk(root):
-            print(root.val)
+            self.pre_order_list.append(root.val)
             if root.left:
                 walk(root.left)
+                
+                
             if root.right:
+                
                 walk(root.right)
+       
         walk(self.root)
+        return self.pre_order_list
+        
         
     def post_order(self):
         
@@ -89,8 +94,10 @@ class Binary_tree:
                 
                 rev_walk(root.right)
             print(root.val)
+            self.post_order_list.append(root.val)
    
         rev_walk(self.root)
+        return self.post_order_list
         
     
     def in_order(self):
@@ -101,6 +108,7 @@ class Binary_tree:
                 rev_walk(root.left)
                 # print(root.val)
             print(root.val)
+            self.in_order_list.append(root.val)
             if root.right:
                 # print(root.right.val)
                 
@@ -108,6 +116,46 @@ class Binary_tree:
             
     
         rev_walk(self.root)
+        print(self.in_order_list)
+        return self.in_order_list
+    
+    def findMax(self):
+        if self.root:
+            self.maximum_value=self.root.val
+            
+        else:
+            return "tree is empty"
+            # print ("*"*50,type(self.root.left.val))
+            
+        def walk(root):
+            if root.left:
+                 walk(root.left)
+            if self.maximum_value < root.val:
+               self.maximum_value = root.val
+            if root.right:
+                walk(root.right)
+        walk(self.root)
+        return self.maximum_value
+    
+    def bread_first(self):
+        # Use queque for FIFO
+        self.bread_first_list = []
+        queque = Queue()
+        queque.enqueue(self.root)
+        while not queque.is_empty():
+            item = queque.dequeue()
+            print(item.val)
+            self.bread_first_list.append(item.val)
+
+            if item.left is not None:
+                queque.enqueue(item.left)
+
+
+            if item.right is not None:
+                queque.enqueue(item.right)
+
+        return self.bread_first_list
+                
     
 class Binary_Search_Tree(Binary_tree):
     def __init__(self):
@@ -152,46 +200,28 @@ class Binary_Search_Tree(Binary_tree):
         if val==current_node.val:
             return True
         
-    def findMax(self):
-        if self.root:
-            self.maximum_value=self.root.val
-            
-        else:
-            return "tree is empty"
-            # print ("*"*50,type(self.root.left.val))
-            
-        def walk(root):
-            if root.left:
-                 walk(root.left)
-            if self.maximum_value < root.val:
-               self.maximum_value = root.val
-            if root.right:
-                walk(root.right)
-            walk(self.root)
-        print("/"*50,self.maximum_value)
-        return self.maximum_value
-            
+  
                  
                  
 if __name__=="__main__":
    
-    # node1=Tnode("A")
-    # node1.left=Tnode("B")
-    # node1.right=Tnode("C")
-    # node1.right.left=Tnode("F")
-    # node1.left.right=Tnode("E")
-    # node1.left.left=Tnode("D")
+    node1=Tnode("A")
+    node1.left=Tnode("B")
+    node1.right=Tnode("C")
+    node1.right.left=Tnode("F")
+    node1.left.right=Tnode("E")
+    node1.left.left=Tnode("D")
     
     
-    binar_tree=Binary_Search_Tree()
+    binar_tree=Binary_tree(node1)
 
-    binar_tree.add(5)
-    binar_tree.add(2)
-    binar_tree.add(10)
-    binar_tree.add(13)
-    binar_tree.add(15)
+    # binar_tree.add(5)
+    # binar_tree.add(2)
+    # binar_tree.add(10)
+    # binar_tree.add(13)
+    # binar_tree.add(15)
     
-    binar_tree.findMax()
+    # binar_tree.findMax()
     # print(binar_tree.contains(10))
     
     
