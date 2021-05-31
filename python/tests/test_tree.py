@@ -18,12 +18,12 @@ import pytest
 #Can successfully instantiate an empty tree
     
 def test_empty_tree(tree_df):
-    # binar_tree=Binary_Search_Tree()
-    # binar_tree.add(4)
     actual=tree_df.root.val
     excepted=4
  
     assert actual==excepted
+    
+    
 
 # Can successfully instantiate a tree with a single root node
 

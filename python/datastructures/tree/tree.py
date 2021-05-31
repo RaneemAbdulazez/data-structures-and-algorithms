@@ -109,7 +109,7 @@ class Binary_tree:
     
         rev_walk(self.root)
     
-class Binary_Search_Tree:
+class Binary_Search_Tree(Binary_tree):
     def __init__(self):
         self.root=None
         
@@ -123,6 +123,7 @@ class Binary_Search_Tree:
         if val <current_node.val:
             if current_node.left is None:
                 current_node.left=Tnode(val)
+                
             else: 
                 self._add(val,current_node.left)
         elif val>current_node.val:
@@ -133,39 +134,6 @@ class Binary_Search_Tree:
         else:
             print("the value exists ")
 
-                
-   
- 
-        
-        # # print(node.val)
-        # if self.root is None:
-
-        #     def add_root(self,node):
-  
-        #         self.root=node
-                
-        # elif self.root.right is None:
-        #     add_right(node)
-            
-        # elif self.root.left is None:
-        #     add_left(node)
-            
-            
-        #     def add_right(self,node):    
-        #         current=self.root
-        #         while current:
-        #             current=current.right
-        #         self.root.right=node
-        #         print(self.root.right.val)
-                
-                
-        #     def add_left(self,node):    
-        #         current=self.root
-        #         while current:
-        #             current=current.left
-        #         self.root.left=node
-        #         print(self.root.left.val)
-      
     
     def contains(self,val):
         if self.root:
@@ -184,44 +152,46 @@ class Binary_Search_Tree:
         if val==current_node.val:
             return True
         
-        def findMax(root):
-        
-            # Base case
-            if (root == None):
-                return float('-inf')
-        
-            # Return maximum of 3 values:
-            # 1) Root's data 2) Max in Left Subtree
-            # 3) Max in right subtree
-            res = root.data
-            lres = findMax(root.left)
-            rres = findMax(root.right)
-            if (lres > res):
-                res = lres
-            if (rres > res):
-                res = rres
-            return res
-        
-
+    def findMax(self):
+        if self.root:
+            self.maximum_value=self.root.val
+            
+        else:
+            return "tree is empty"
+            # print ("*"*50,type(self.root.left.val))
+            
+        def walk(root):
+            if root.left:
+                 walk(root.left)
+            if self.maximum_value < root.val:
+               self.maximum_value = root.val
+            if root.right:
+                walk(root.right)
+            walk(self.root)
+        print("/"*50,self.maximum_value)
+        return self.maximum_value
+            
                  
                  
 if __name__=="__main__":
    
-    node1=Tnode("A")
-    node1.left=Tnode("B")
-    node1.right=Tnode("C")
-    node1.right.left=Tnode("F")
-    node1.left.right=Tnode("E")
-    node1.left.left=Tnode("D")
+    # node1=Tnode("A")
+    # node1.left=Tnode("B")
+    # node1.right=Tnode("C")
+    # node1.right.left=Tnode("F")
+    # node1.left.right=Tnode("E")
+    # node1.left.left=Tnode("D")
     
     
-    binar_tree=Binary_tree()
-    binar_tree.add(4)
-    print(binar_tree.root.val)
-     binar_tree(root)
-    # binar_tree.add(2)
-    # binar_tree.add(8)
-    # binar_tree.add(10)
+    binar_tree=Binary_Search_Tree()
+
+    binar_tree.add(5)
+    binar_tree.add(2)
+    binar_tree.add(10)
+    binar_tree.add(13)
+    binar_tree.add(15)
+    
+    binar_tree.findMax()
     # print(binar_tree.contains(10))
     
     
