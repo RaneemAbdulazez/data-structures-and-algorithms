@@ -2,7 +2,8 @@ Challenge Summary
 find maximuim value in a binary tree
 
 Whiteboard Process
-![](python/datastructures/tree//whiteboard.png)
+
+![](python/datastructures/tree/whiteboard.png)
 
 
 Approach & Efficiency
