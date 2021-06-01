@@ -3,7 +3,7 @@ find maximuim value in a binary tree
 
 Whiteboard Process
 
-![](python/datastructures/tree/whiteboard.png)
+![](whiteboard.png)
 
 
 Approach & Efficiency
