@@ -2,7 +2,7 @@ Challenge Summary
 Write a breadth first traversal method which takes a Binary Tree as its unique input.
 
 Whiteboard Process
-![](python/datastructures/tree/breadth_first.jpg)
+![](breadth_first.jpg)
 
 
 Approach & Efficiency
