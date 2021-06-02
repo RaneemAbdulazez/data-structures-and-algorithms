@@ -1,6 +1,7 @@
 # # from python.datastructures.tree.tree import Binary_tree
 # # from python.datastructures.tree.tree import Binary_Search_Tree, Binary_tree
 from datastructures.tree.tree import Binary_Search_Tree,Binary_tree,Node,Tnode
+from python.challenges.fizzbuzz_tree.fizz_buzz_tree import *
 import pytest 
 
 
@@ -90,6 +91,29 @@ def test_breadth_first(tree_breadth):
     actual = tree_breadth.bread_first()
     expected = [2, 7, 5, 2, 6, 9, 5, 11, 4]
     assert actual == expected
+    
+    
+# def test_fiz_buzz_tree(fizz_buzz_tree):
+#     actual=
+    
+    
+    
+@pytest.fixture
+def fizz_buzz_tree():
+    nodi=Tnode(1)
+    nodi.left=Tnode(2)
+    nodi.right=Tnode(3)
+    nodi.left.right=Tnode(4)
+    nodi.left.right=Tnode(5)
+    nodi.right.left=Tnode(6)
+    tree=Binary_tree(nodi)
+    
+    return tree
+    
+    
+    
+    
+    
     
     
 @pytest.fixture

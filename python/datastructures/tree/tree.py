@@ -65,8 +65,7 @@ class Binary_tree:
         self.in_order_list=[]
         self.post_order_list=[]
     def pre_order(self):
-       
-        
+    
         def walk(root):
             self.pre_order_list.append(root.val)
             if root.left:
@@ -82,7 +81,6 @@ class Binary_tree:
         
         
     def post_order(self):
-        
         def rev_walk(root):
             # print(root.val)
             if root.left:
@@ -91,7 +89,6 @@ class Binary_tree:
                 # print(root.val)
             if root.right:
                 # print(root.right.val)
-                
                 rev_walk(root.right)
             print(root.val)
             self.post_order_list.append(root.val)
