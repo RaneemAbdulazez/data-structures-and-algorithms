@@ -6,4 +6,4 @@ Selection Sort is a sorting algorithm that traverses the array multiple times as
 Big O(n^2)
 
 ## Solution
-[code](python/challenges/Insertion_Sort/insertion_sort.py)
+[code](insertion_sort.py)
