@@ -7,3 +7,4 @@ Big O(n^2)
 
 ## Solution
 [code](insertion_sort.py)
+
