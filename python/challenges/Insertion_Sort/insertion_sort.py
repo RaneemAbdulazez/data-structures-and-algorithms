@@ -1,4 +1,5 @@
 def insertion_sort(lst):
+    sorted_array=[]
     # Traverse through 1 to len(lst)
     for i in range(1, len(lst)):
 
@@ -11,6 +12,9 @@ def insertion_sort(lst):
           lst[j+1] = key
 
 
+    for i in range(len(lst)):
+        sorted_array.append(lst[i])
+    return sorted_array
 if __name__=="__main__":
 
 
@@ -25,9 +29,8 @@ if __name__=="__main__":
     insertion_sort(arr)
 
     # insertionSort(arr)
-    print ("Sorted array is:")
-    for i in range(len(arr)):
-        print ("%d" %arr[i])
+    # print ("Sorted array is:")
+
 
 
 
