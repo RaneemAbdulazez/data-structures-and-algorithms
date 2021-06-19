@@ -64,13 +64,3 @@ class Hashmap:
         return False
 
 
-if __name__ == "__main__":
-    hash_map = Hashmap()
-    print(hash_map.add('python','Machine learnign '))
-    hash_map.add('python','web development')
-    hash_map.add('javascript','web development')
-    hash_map.add('java','mobile application')
-    hash_map.add('C#','game development')
-    print(hash_map.get('python'))
-    print(hash_map)
-    print('pass')
