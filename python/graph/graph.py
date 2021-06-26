@@ -51,19 +51,19 @@ class Graph:
 # if __name__=="__main__":
 #     # # print('hello')  
     
-#     # graphi=Graph()
-#     # y=graphi.add_node(1)
-#     # x=graphi.add_node(5)
-#     # z=graphi.add_node(3)
-#     # f=graphi.add_node('w')
+graphi=Graph()
+y=graphi.add_node(1)
+x=graphi.add_node(5)
+z=graphi.add_node(3)
+f=graphi.add_node('w')
 
 
 
-#     # graphi.add_edge(y,x,2)
-#     # graphi.add_edge(z,f,2)
-#     # graphi.add_edge(y,z,2)
+graphi.add_edge(y,x,2)
+graphi.add_edge(z,f,2)
+graphi.add_edge(y,z,2)
 
 
-#     # print(graphi.get_neighbors(y))
-        
+print(graphi.get_neighbors(y))
+    
         

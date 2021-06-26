@@ -69,7 +69,7 @@ def test_add_edge_with_weight(graph):
     graph.add_edge(apple, banana, weight)
 
     expected = (banana, weight)
-    actual = graph.adjacency_list[apple][0]
+    actual = graph.adjancency_list[apple][0]
 
     assert actual == expected
 
@@ -90,12 +90,12 @@ def test_get_nodes(graph):
     Get a collection of al vertices in a graph.
     """
 
-    apple = graph.add_node('apple')
-    banana = graph.add_node('banana')
-    carrot = graph.add_node('carrot')
+    raneem = graph.add_node('raneem')
+    omar = graph.add_node('omar')
+    sami = graph.add_node('sami')
 
-    expected = set({apple, banana, carrot})
-    actual = set(graph.get_nodes())
+    expected =['raneem','omar','sami']
+    actual =graph.get_nodes()
 
     assert actual == expected
 
@@ -105,10 +105,10 @@ def test_get_nodes_no_neighbors(graph):
     A graph vertex with no neighbors is shown as an empty collection.
     """
 
-    apple = graph.add_node('apple')
+    raneem = graph.add_node('raneem')
 
     expected = []
-    actual = graph.get_neighbors(apple)
+    actual = graph.get_neighbors(raneem)
 
     assert actual == expected
 
@@ -118,13 +118,14 @@ def test_get_neighbors(graph):
     Neighbors of a graph vertex are gotten.
     """
 
-    apple = graph.add_node('apple')
-    banana = graph.add_node('banana')
+    raneem = graph.add_node('raneem')
+    omar = graph.add_node('omar')
 
-    graph.add_edge(apple, banana)
+    graph.add_edge(raneem, omar)
 
-    expected = [(banana, 0)]
-    actual = graph.get_neighbors(apple)
+    expected = graph.get_neighbors(raneem)
+
+    actual = graph.get_neighbors(raneem)
 
     assert actual == expected
 
@@ -135,7 +136,7 @@ def test_size_empty(graph):
     """
 
     expected = 0
-    actual = graph.size()
+    actual = graph.get_size()
 
     assert actual == expected
 
@@ -145,10 +146,10 @@ def test_size(graph):
     See size of non-empty graph.
     """
 
-    graph.add_node('apple')
+    graph.add_node('raneem')
 
     expected = 1
-    actual = graph.size()
+    actual = graph.get_size()
 
     assert actual == expected
 
