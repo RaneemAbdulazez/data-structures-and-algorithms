@@ -1,7 +1,7 @@
-from  .hashmap import Hashmap
+from  .hashmap import HashTable
 
 def left_join_hash(ht_one,ht_two):
-    hash_table = Hashmap()
+    hash_table = HashTable()
     for elm in ht_one.map :
         if elm :
             hash_table.add(elm.head.data[0], [elm.head.data[1],None])
@@ -15,13 +15,13 @@ def left_join_hash(ht_one,ht_two):
 
 if __name__ == "_main_":
     
-  ht_one = Hashmap()
+  ht_one = HashTable()
   ht_one.add('fond', 'enamored')
   ht_one.add('wrath', 'anger')
   ht_one.add('diligent', 'employed')
   ht_one.add('guide', 'garp')
   ht_one.add('outfit', 'usher')
-  ht_two = Hashmap()
+  ht_two = HashTable()
   ht_two.add('fond', 'averse')
   ht_two.add('wrath', 'delight')
   ht_two.add('diligent', 'idle')

@@ -1,4 +1,19 @@
 from challenges.left_join.left_join import left_join_hash
+from challenges.left_join.hashmap import HashTable
+import pytest
 
-def test_lef_join_hash():
-    print('hellp')
+
+def test():
+  ht_one = HashTable()
+  ht_one.add('fond', 'enamored')
+  ht_one.add('wrath', 'anger')
+  ht_one.add('diligent', 'employed')
+  ht_one.add('guide', 'garp')
+  ht_one.add('outfit', 'usher')
+  ht_two = HashTable()
+  ht_two.add('fond', 'averse')
+  ht_two.add('wrath', 'delight')
+  ht_two.add('diligent', 'idle')
+  ht_two.add('guide', 'follow')
+  ht_two.add('flow', 'jam')
+  assert left_join_hash(ht_one,ht_two).__str__() =="{['diligent', ['employed', 'idle']]} -> None{['outfit', ['usher', None]]} -> None{['fond', ['enamored', 'averse']]} -> None{['guide', ['garp', 'follow']]} -> None{['wrath', ['anger', 'delight']]} -> None"
