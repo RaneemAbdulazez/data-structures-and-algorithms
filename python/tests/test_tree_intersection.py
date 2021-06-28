@@ -9,7 +9,7 @@ import pytest
 ])
 def test_tree_intersection(values_a, values_b, expected):
     """
-    The intersection of two trees is found.
+    The intersection of two trees is found.c
     """
 
     # Write add method for BinaryTree
