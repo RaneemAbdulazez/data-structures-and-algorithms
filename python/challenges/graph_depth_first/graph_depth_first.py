@@ -12,30 +12,22 @@ class Graph:
     def addEdge(self, u, v):
         self.graph[u].append(v)
  
-    # A function used by DFS
-    def DFSUtil(self, v, visited):
- 
-        # Mark the current node as visited
-        # and print it
+    def DFSUtil(self, v, visited,result):
+        
         visited.add(v)
-        print(v, end=' ')
- 
-        # Recur for all the vertices
-        # adjacent to this vertex
+        # print(v, end=' ')
+        result.append(v)
         for neighbour in self.graph[v]:
             if neighbour not in visited:
-                self.DFSUtil(neighbour, visited)
- 
-    # The function to do DFS traversal. It uses
-    # recursive DFSUtil()
+                self.DFSUtil(neighbour, visited,result)
+        
     def DFS(self, v):
- 
-        # Create a set to store visited vertices
+        result=[]
         visited = set()
- 
-        # Call the recursive helper function
-        # to print DFS traversal
-        self.DFSUtil(v, visited)
+        self.DFSUtil(v, visited,result)
+        return result
+        
+
  
 # Driver code
  
