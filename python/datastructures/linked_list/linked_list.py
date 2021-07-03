@@ -78,11 +78,9 @@ class LinkedList:
     def kth_from_the_end(self, k):
         current = self.head
         count = 0
-
         while current.next:
             current = current.next
             count += 1
-
         if k > count:
             return 'Sorry, the value is larger than the linked list'
         if k > count:
@@ -96,4 +94,78 @@ class LinkedList:
         print(current.value)
         return current.value
 
+    def insert_after(self,node,new_node):
+        node_1=Node(node)
+        node_2=Node(new_node)
+        if not self.head or not node_1.value or not node_2.value:
+            return 'not valid'
+        
+        
+        # set pointer to head
+        current=self.head
+        print (node_1.value, node_2.value ,current)
+        while current and node_1.value!=current.value:
+            current=current.next
+            
+        temp=current.next  #=5        
+        current.next=node_2 #4
+        while current: #3
+            temp=temp.next #6
+            current=temp
+        return 'added'
+    
+    def swap_nodes(self,node1,node2):
+        current=self.head
+    
+        while current:
+            if current.value==node1:
+                node1_pointer=current
+            if current.value==node2:
+                node2_pointer=current
+            current=current.next
+            if node1_pointer and node2_pointer:
+                temp=node2_pointer
+                
+                
+
+
+            
+    # def insertAfter(self, value, newVal):
+        
+    #         new_node = Node(newVal)
+    #         current = self.head
+    #         if not self.head:
+    #                 self.head = new_node
+    #         else:
+    #             current = self.head
+    #             while current.next:
+    #                 if current.next.value == value:
+    #                     current = current.next
+    #                     old_node = current.next
+    #                     current.next = new_node
+    #                     new_node.next = old_node
+    #                     return  f' "{newVal}" added secssfuly...'
+    #                 else:
+    #                     current = current.next
+                        
+    #             return "this node is not exist!"
+
+
+if __name__=="__main__":
+    node1=Node(1)
+    node2=Node(2)
+    node3=Node(3)
+    node5=Node(5)
+    
+    ll=LinkedList()
+    ll.append(node1)
+    ll.append(node2)
+    ll.append(node3)
+    ll.append(node5)
+    # print(ll)
+    ll.insert_after(3,4)
+    # print(ll)
+    
+    
+    
     

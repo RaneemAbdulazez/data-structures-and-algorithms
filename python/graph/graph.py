@@ -43,27 +43,64 @@ class Graph:
         
     def get_neighbors(self,vertex):
         return self.adjancency_list[vertex]
-         
+    
+    
+
+    def graph_breadth_first(self,node):
+        visited=set()
+        output=[]
+        q=deque()
+        q.append(node.value)
+        
+        current=q.popleft()
+        while current not in visited: 
+            visited.add(current)
+            print(visited)
+            output.append(current)
+            print(output)
+            
+            neighbors=self.get_neighbors(current)
+            
+            for i in neighbors:
+                print(i[0][1])
+                # self.graph_breadth_first(i)
+                
+        return output
+        
+            
         
     
     
     
-# if __name__=="__main__":
-#     # # print('hello')  
+if __name__=="__main__":
+    # # print('hello')  
     
-#     # graphi=Graph()
-#     # y=graphi.add_node(1)
-#     # x=graphi.add_node(5)
-#     # z=graphi.add_node(3)
+    graphi=Graph()
+    a=graphi.add_node(1)
+    b=graphi.add_node(2)
+    c=graphi.add_node(3)
+    d=graphi.add_node(4)
+    e=graphi.add_node(5)
+    g=graphi.add_node(6)
+    
+    
 #     # f=graphi.add_node('w')
 
+    graphi.add_edge(a,b)
+    graphi.add_edge(b,c)
+    graphi.add_edge(b,d)
+    graphi.add_edge(c,d)
+    graphi.add_edge(d,g)
+    graphi.add_edge(c,g)
+    graphi.add_edge(c,e)
+    graphi.add_edge(g,e)
+    
+    print(graphi.get_neighbors(a))
+    
+    
+    
+    
 
 
-#     # graphi.add_edge(y,x,2)
-#     # graphi.add_edge(z,f,2)
-#     # graphi.add_edge(y,z,2)
-
-
-#     # print(graphi.get_neighbors(y))
         
         
